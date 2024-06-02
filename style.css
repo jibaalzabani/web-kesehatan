@@ -72,24 +72,23 @@ header{
     justify-content: center;
     text-align: center;
     gap: 26px;
-    background-color: #fff;
+    background-color: #f8f8f8;
     opacity: 0.8;
-    background-image:  radial-gradient(#2d6a4f 0.75px, transparent 0.75px), radial-gradient(#2d6a4f 0.75px, #ffffff 0.75px);
-    background-size: 30px 30px;
-    background-position: 0 0,15px 15px;
+    background: url("assests/background.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
 }
 
 header .info h1{
     font-weight: 900;
-    background: #fff;
 }
 
 header .info p{
-    color: #666;
+    color: black;
     font-size: 18px;
     margin-top: 14px;
     font-weight: bold;
-    background: #fff;
 }
 
 header .buttons{

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Website Kesehatan</title>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container label {
+            margin-bottom: 5px;
+            color: #666;
+            text-align: left;
+        }
+
+        .login-container input {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .login-container input:focus {
+            border-color: #0072ff;
+            box-shadow: 0 0 8px rgba(0, 114, 255, 0.2);
+            outline: none;
+        }
+
+        .login-container button {
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: #0072ff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #005bb5;
+        }
+
+        .login-container .footer {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .login-container .footer a {
+            color: #0072ff;
+            text-decoration: none;
+        }
+
+        .login-container .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-container h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Registrasi</h1>
+        <form id="registration-form">
+            <label for="fullname">Nama Lengkap</label>
+            <input type="text" id="fullname" name="fullname" placeholder="masukkan nama lengkap" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="masukkan email anda" required>
+            <label for="phone">Nomor Telepon</label>
+            <input type="tel" id="phone" name="phone" placeholder="masukan no telepon anda" required pattern="[0-9]{10,12}">
+            <label for="password">Kata Sandi</label>
+            <input type="password" id="password" name="password" placeholder="masukkan password anda" required>
+            <button type="submit" id="submit-btn">Daftar</button>
+        </form>
+        <div class="footer">
+            <p>Sudah punya akun? <a href="login.html">Masuk disini</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showSuccessAlert();
+        });
+
+        function showSuccessAlert() {
+            Swal.fire('Sukses', 'Registrasi berhasil!', 'success').then(() => {
+                // Redirect ke halaman login
+                window.location.href = 'login.html';
+            });
+        }
+    </script>
+</body>
+</html>

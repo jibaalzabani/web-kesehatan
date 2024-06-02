@@ -76,7 +76,7 @@ header{
     opacity: 0.8;
     background: url("assests/background.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
 }
 
